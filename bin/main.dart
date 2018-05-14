@@ -1,5 +1,8 @@
-import 'package:GetStartedWithDart/GetStartedWithDart.dart' as GetStartedWithDart;
+import 'package:GetStartedWithDart/GetStartedWithDart.dart' as Calculator;
 
 main(List<String> arguments) {
-  print('Hello world: ${GetStartedWithDart.calculate()}!');
+  var a = 10;
+  //int a =10;
+  print('''Hello world:\u{1f600} \u2665 ${Calculator.calculate()}!
+         Value of a is: $a''');   //print multiline to console
 }
