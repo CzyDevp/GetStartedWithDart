@@ -1,5 +1,4 @@
 import 'package:GetStartedWithDart/GetStartedWithDart.dart' as Calculator;
-
 main(List<String> arguments) {
   var a = 10;
   print('''Hello world:\u{1f600} \u2665 
@@ -37,7 +36,18 @@ main(List<String> arguments) {
   var marks = new Map();   //here key can be any object
   marks[1]=67;
   marks[2]=78;
+
   gifts['third']='toys';  //adding new to map
   print('length is ${gifts.length}');    //expression must be in braces
   print('Thrid gift is : ${gifts['third']}');
+
+  print('Sum is : ${printNumber(10)}');    //function call with hard-coded value
 }
+
+//function examples
+int printNumber(num number) =>  number +10 ;      // functional style
+/*
+{
+   return  number + 10;
+}
+*/
