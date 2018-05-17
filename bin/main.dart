@@ -42,6 +42,12 @@ main(List<String> arguments) {
   print('Thrid gift is : ${gifts['third']}');
 
   print('Sum is : ${printNumber(10)}');    //function call with hard-coded value
+
+  //optional function call without Device
+  print(say("Nav"));
+  //optional function call with Device
+  print(say("Nav","lcd"));
+
 }
 
 //function examples
@@ -51,3 +57,18 @@ int printNumber(num number) =>  number +10 ;      // functional style
    return  number + 10;
 }
 */
+//Optional parameters  positioned or named can have (default values_compile time_checked)
+// optional with (?param) [] for positional params
+String say(String name, [String device]){
+  var result ='';
+  if(device!=null) {
+     result = '$name tell me your $device name';
+  }
+  else{
+    result = 'Device is not given';
+  }
+  return result;
+}
+
+
+
