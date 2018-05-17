@@ -62,6 +62,14 @@ main(List<String> arguments) {
   print('Number is $sum');
   sum = add(10);
   print(sum);
+
+  //basic operators call
+  operatorSample();
+
+  //class point call
+  Point p = new Point()..x=10..printElement();   //chained call with object cool feature
+  // p.x = 10;
+  print("Value of Object p's x ${p.x}");
 }
 
 //function examples
@@ -93,6 +101,59 @@ printElement(element){
 //closure example
 Function makeAdder(num n){
   return (num i) => n + i;
+}
+
+//common use case of basic operators and conditional loops
+operatorSample(){
+  var list = [1,2,3];
+  int a = 10, b=20;
+  var c = b?? a; //if b not null assign b otherwise a
+  print("Asign b or a to c $c");
+  b??=a;  //assign if b initially not defined or null(by default)
+  print("B after using ?? $b");
+  //in version
+  for (var x in list){
+    print(x);
+  }
+  //as is is!
+  if(a is int)     print("true");
+  if(a is! String) print("a is ${a.runtimeType}");
+  if(a>b)          print("A is greater than b");
+  if(a<b)          print("B is greater than A");
+  //conditional operator
+  a>8? print("True $a is > 8"): print("Wrong");
+  //choose switch if you have random but known cases
+  switch(a){
+    case 10:
+      print("A is 10");
+      break;
+      //continue 'check1';
+    //check1:
+    case 1:
+      print("A is 10");
+      break;
+    default:
+      print("Default, Must provide Break in all cases");
+      break;
+  }
+  //try-catch
+  try{
+       //throw new OutOfMemoryError();
+      throw new Exception('Sorry I do not know what happen');
+  }on OutOfMemoryError{
+    print('Memory space is not available');
+  }catch(e){
+    print('Detected $e');
+  }finally{
+    print("always run");
+  }
+
+}
+class Point{
+  int x;
+  printElement(){
+    print("Var is $x");
+  }
 }
 
 
