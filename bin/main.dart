@@ -1,4 +1,5 @@
 import 'package:GetStartedWithDart/GetStartedWithDart.dart' as Calculator;
+import 'Person.dart';
 main(List<String> arguments) {
   var a = 10;
   print('''Hello world:\u{1f600} \u2665 
@@ -67,9 +68,14 @@ main(List<String> arguments) {
   operatorSample();
 
   //class point call
-  Point p = new Point()..x=10..printElement();   //chained call with object cool feature
-  // p.x = 10;
-  print("Value of Object p's x ${p.x}");
+  Point p = new Point(5,4)..y=10..printElement();   //chained call with object cool feature
+  p.x = 10;
+  print("Value of Object p's x ${p.get_x}");
+  p.getBase(); //abstract method call
+  Point.id =4001447;
+  print('Static member ${Point.id}');
+  Person  person =  new Person(12,'Nav Singh',5147921313);   //call to other file
+  print(person.toString());
 }
 
 //function examples
@@ -139,22 +145,41 @@ operatorSample(){
   //try-catch
   try{
        //throw new OutOfMemoryError();
-      throw new Exception('Sorry I do not know what happen');
+      throw new Exception('Sorry I do not know what happen');  //rethrow
   }on OutOfMemoryError{
     print('Memory space is not available');
-  }catch(e){
+  }catch(e,s){
     print('Detected $e');
+    print('Stack Trace is $s');  //print current stack related to an error
   }finally{
     print("always run");
   }
 
 }
-class Point{
-  int x;
+class Point extends BasePoint{
+  static int id;
+  int x,y;
+  Point(x,y){
+    x=x;
+    y=y;
+  }
+  num get get_x => x;   //getter
+  set set_x(x) => x;    //setter
   printElement(){
     print("Var is $x");
   }
+  //abstract implementation goes here.....
+  @override
+  void getBase() {
+    // TODO: implement getBase
+    print('Hello from Abstract');
+  }
 }
+//abstract class
+abstract class BasePoint{
+  void getBase();
+}
+
 
 
 
