@@ -48,6 +48,20 @@ main(List<String> arguments) {
   //optional function call with Device
   print(say("Nav","lcd"));
 
+  //function as first class objects
+  var list1 = [1,2,3];
+  list1.forEach(printElement);
+
+  //anonymous function
+  var list2 = [1,23,34];
+  list2.forEach((item) =>     print('Index is: ${list2.indexOf(item)} Value is: $item'));
+
+  //closure
+  var add = makeAdder(5); //store method in add
+  var sum = add(5);
+  print('Number is $sum');
+  sum = add(10);
+  print(sum);
 }
 
 //function examples
@@ -57,9 +71,10 @@ int printNumber(num number) =>  number +10 ;      // functional style
    return  number + 10;
 }
 */
+
 //Optional parameters  positioned or named can have (default values_compile time_checked)
-// optional with (?param) [] for positional params
-String say(String name, [String device]){
+//optional with (?param) [] for positional params   //{}-> named optional
+String say(name, [device]){
   var result ='';
   if(device!=null) {
      result = '$name tell me your $device name';
@@ -68,6 +83,16 @@ String say(String name, [String device]){
     result = 'Device is not given';
   }
   return result;
+}
+
+//function as first class objects
+printElement(element){
+  print(element);
+}
+
+//closure example
+Function makeAdder(num n){
+  return (num i) => n + i;
 }
 
 
