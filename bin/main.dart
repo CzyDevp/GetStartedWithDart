@@ -76,6 +76,8 @@ main(List<String> arguments) {
   print('Static member ${Point.id}');
   Person  person =  new Person(12,'Nav Singh',5147921313);   //call to other file
   print(person.toString());
+  Person  per =  new Person.nam(13,'Jim Singh',5017921313);   //call to other file
+  print(per.toString());
 }
 
 //function examples

@@ -2,11 +2,12 @@ class Person{
   int id;
   var name;
   int mobile;
-  Person(id,name,mobile){
-    this.id = id;
+  Person(this.id,this.name,this.mobile);
+  /* this.id = id;
     this.name = name;
     this.mobile = mobile;
-  }
+  }*/
+  Person.nam(this.id,this.name,this.mobile);
   @override
   String toString() {
     return 'Person{id: $id, name: $name, mobile: $mobile}';
