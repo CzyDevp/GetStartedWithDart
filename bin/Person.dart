@@ -13,3 +13,13 @@ class Person{
     return 'Person{id: $id, name: $name, mobile: $mobile}';
   }
 }
+class Imposter implements Person{
+
+  @override
+  int id;
+  @override
+  int mobile;
+  @override
+  var name;
+  Imposter(this.id,this.mobile,this.name);
+}

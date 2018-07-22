@@ -1,5 +1,6 @@
 import 'package:GetStartedWithDart/GetStartedWithDart.dart' as Calculator;
 import 'Person.dart';
+import 'StaticFamily.dart';
 main(List<String> arguments) {
   var a = 10;
   print('''Hello world:\u{1f600} \u2665 
@@ -78,6 +79,9 @@ main(List<String> arguments) {
   print(person.toString());
   Person  per =  new Person.nam(13,'Jim Singh',5017921313);   //call to other file
   print(per.toString());
+  //static Check
+  StaticFamily.fName = "Nav Singh";
+  StaticFamily.greetByName();
 }
 
 //function examples
@@ -158,13 +162,15 @@ operatorSample(){
   }
 
 }
+
 class Point extends BasePoint{
   static int id;
   int x,y;
-  Point(x,y){
-    x=x;
-    y=y;
-  }
+  //factory keyword used to implement factory pattern
+  Point(this.x,this.y);//{
+   // x=x;
+    //y=y;
+  //}
   num get get_x => x;   //getter
   set set_x(x) => x;    //setter
   printElement(){
