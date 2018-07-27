@@ -7,4 +7,5 @@ class StaticFamily{
   static void greetByName(){
     print("Hi from $fName");
   }
+  static void printGreeting()=> print("Hi Good Morning");
 }
